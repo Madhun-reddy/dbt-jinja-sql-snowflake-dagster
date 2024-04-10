@@ -1,0 +1,18 @@
+version: 2
+# preset dashboard is not created and login references are not generated yet.
+# so dashboard will not be available in dbt docs serve
+exposures:
+  - name: Executive_Dashboard
+    label: Executive Dashboard
+    type: dashboard
+    maturity: low
+    url: https://7e942fbd.us2a.app.preset.io:443/r/2
+    description: Executive Dashboard about Airbnb listings and hosts
+  
+  depends_on:
+    - ref('dim_listings_w_hosts')
+    - ref('fullmoon_reviews')
+  
+  owner:
+    name: Madhu sudhan
+    email: hello@learndbt.co
